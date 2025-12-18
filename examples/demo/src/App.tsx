@@ -71,8 +71,9 @@ function EditorControls() {
 
   const exportJson = () => {
     const json = serialize(state);
+    // In a production app, this would send to a backend or download as a file
+    alert('JSON exported! Check browser console for details.');
     console.log('Exported JSON:', json);
-    alert('JSON exported to console');
   };
 
   const importJson = () => {

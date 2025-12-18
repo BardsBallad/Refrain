@@ -61,12 +61,13 @@ function NodeRenderer({ node, enableDragDrop = true }: NodeRendererProps) {
 interface EditorProps {
   className?: string;
   enableDragDrop?: boolean;
+  onDragEnd?: (activeId: string, overId: string) => void;
 }
 
 /**
  * Main editor component
  */
-export function Editor({ className, enableDragDrop = true }: EditorProps) {
+export function Editor({ className, enableDragDrop = true, onDragEnd }: EditorProps) {
   const { state } = useEditor();
 
   const sensors = useSensors(
@@ -80,12 +81,12 @@ export function Editor({ className, enableDragDrop = true }: EditorProps) {
     const { active, over } = event;
 
     if (over && active.id !== over.id) {
-      // Handle reordering logic
-      // This is a simplified version - full implementation would need to:
+      // Notify parent component of drag event
+      onDragEnd?.(String(active.id), String(over.id));
+      // Note: Full implementation would need to:
       // 1. Find the parent of both nodes
       // 2. Reorder children in the parent
       // 3. Dispatch an update action
-      console.log('Drag end:', { active: active.id, over: over.id });
     }
   };
 

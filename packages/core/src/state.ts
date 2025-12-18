@@ -41,7 +41,7 @@ export function createEditorState(): EditorState {
  * Generate a unique identifier
  */
 export function generateId(): NodeId {
-  return `node_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+  return `node_${Date.now()}_${Math.random().toString(36).substring(2, 11)}`;
 }
 
 /**
