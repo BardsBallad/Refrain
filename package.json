@@ -1,0 +1,35 @@
+{
+  "name": "refrain-monorepo",
+  "version": "0.0.0",
+  "private": true,
+  "description": "WYSIWYG editor powering BardsBallad character tabs, character builder + level up wizards",
+  "keywords": [
+    "wysiwyg",
+    "editor",
+    "react",
+    "typescript",
+    "drag-and-drop"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BardsBallad/Refrain.git"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "clean": "turbo run clean && rm -rf node_modules .turbo",
+    "type-check": "turbo run type-check"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "turbo": "^1.11.0",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "packageManager": "pnpm@8.14.0"
+}
